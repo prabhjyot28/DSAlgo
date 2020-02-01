@@ -1,0 +1,25 @@
+Concepts
+
+keep tracks of code history, take 'snapshot' of your files, we decide when to take snapshot by committing, you can visit any snapshot at any time
+
+
+git init                       ==> Initilaise git repo.
+git add .                      ==> Add files to staging area
+git status                     ==> Check status for working tree.
+git commit                     ==> Commit changes in Index.
+
+
+#REMOTE REPOSITORY#
+
+git push                       ==> Push to remote repository.
+git pull                       ==> Pull latest from repote repository.
+git clone                      ==> Clone a remote repo. into your new directory.
+git branch <branch_name>       ==> Create a new branch
+git checkout <branch_name>     ==> Switch between branches.
+git merge <branch_name>        ==> Go to a branch in which you want to merge and then run this command to merge any branch there.
+
+
+
+git push -u origin master      ==> To push an existing project.
+
+

@@ -1,0 +1,206 @@
+Graph is a set of vertices and edges.
+
+Degree of a graph = number of edges touching a given vertex. (for each vertex)
+
+Connected Graph = A graph is said to be connected if every vertex is reachabl from every other vertex.
+
+
+Complete Graph = When every vertex has a direct edge to every other.
+
+Loop = An edge from a vertex to itself.
+
+
+
+GRAPH PATH SEARCHING
+
+
+1)  DFS =>
+
+- Can be implemented Recursively, backtracking way
+- Choose a vertex and explore it, and mark all the vertex that are visited, and unchoose it.
+- Select other and explore, (those are not visited)
+
+
+
+PROS
+- DFS guranteed to find a path if one exists.
+
+CONS
+- DFS not necessarily find the best/shortest path.
+
+
+
+
+2) BFS =>
+
+- Takes one step down all paths and immediately backtracking.
+- Tries visiting one step in each direction repeatedly until it finds a solution.
+- Easily implemented iteratively.
+
+
+
+PROS
+-  Always returns shortest length path (one with fewest edges) for unweighted graphs. 
+   NOTE:- In weighted graph, not always optimal cost path.
+
+CONS
+- It generally visits more nodes/ locations then DFS before finding a path. So It depends 
+  on our data when it's expensive to look up and visit our data, go with DFS.
+
+
+
+3) Dijktra's Algorithm => Finds the minimum weighted path in a graph not always th shortest.
+
+- Implemented same like BFS but it explores cheaper things first, using Priority Queue.
+- We maintains a priority queue and explore those vertex first which have low cost, and if
+  we find a lower cost for any unvisited vertex we update its cost.
+  So it expands like a fungus
+- Dijkstra visits relatively more locations to find a path.
+- It's a greedy algo bcoz we make choises that currently seems the best.
+- Time complexity of dijktra is little bit more than DFS and BFS as it takes O(ElogV) while
+  they take O(E)
+
+
+
+
+4) A*  Search =>
+
+A modified version of Dijkstra's Algorithm that uses a heuristic function to guide its order of path exploration.
+A* supposed to sort of going a good way versus going a bad way
+Exactly the same algorithm as Dijkstra but uses a priority queue as
+
+P(b) = cost(a, b) + heuristic(b, c) 
+
+
+NOTE ==>
+
+Dijkstra and A* always going to found the same path with same cost because that's the minimum cost path but A* visit less no. of nodes before getting that path because we guide the exploring process by our Heuristic function.
+
+
+
+#-------------------------------------------------------------------------------#
+
+
+Spanning tree =>
+
+Spanning tree of a graph is a set of edges that connects all the vertices int the graph with no cycles in it.
+
+- Spanning tree has V-1 edges.
+
+No. of Possible ST =  ((E)C(V-1))-(No of cycles)
+
+
+
+Minimum spanning tree =>
+
+A spanning tree that has the lowest combined edge weight (cost).
+
+
+
+
+
+Kruskal Algo  => to find the minimum spanning tree
+
+1) Remove all edges from the graph
+2) Place all edges into PQ based on cost
+3) While PQ is not empty, dq an edge from PQ, and check if this edge's end pt are not already connected then add then add that edge into the graph
+
+OR Select the minimum cost but dont let it form a cycle.
+
+4) Otherwise skip that edge.
+
+
+
+NOTE:: To check an edge points are connected or not we can perform path search but it would be very expensive, instead we can use a Disjoint set which keeps all connected memeber in same cluster, and we can simply check for the connectivity between them and that would be very efficient.
+
+
+
+
+
+Prims Algo => Always select the lowest connected edge, for first edge select the lowest one.
+
+
+
+NOTE:  For non connected graphs spanning trees is not defined, But if run kruskal's algo for non connected graph it produces spanning tree for separate componenets.
+
+
+
+
+
+
+
+#--------------------------------------------#
+
+Transitiviy closure of graph => Is the Reachability matrix of graph
+Can be implemented using DFS of a graph and the use of set.
+
+
+
+
+
+1) (Floyd Warshall Algo.) to find transitivity closure   -  DP
+2) (Kruskal Algo   and Prim's Algo) to find MST        -  Greedy Algo
+
+
+
+#---------------------------------------------------#
+
+Bellman Ford Algorithm  => To find the shortest path (minimum cost) from one nodes to all other, very similar to Dijkstra algorithm but it also works well in case of negative cost edges too, while Dijkstra algo fails there.
+
+- Bellman ford is not a greedy algo while Dijkstra is a greedy due to which it has limitation of failing for negative cost edges.
+- O(V*E)
+
+
+
+NOTE::  But No algorithm can find a minimum cost path if there is a negative cycle present in it.
+
+
+
+#----------------------------------------------------#
+
+Floyd Warshall Algorithm => Provides minimum cost path between all pair of vertices instead of a source vertex. O(n**3)
+
+NOTE:: Can be soleved in O(n**3) by applying dijkstra/bellman on all vertices one by one.
+
+
+
+
+
+Pseudo Code =>
+
+- Generate dis matrix by considering directed edges only.
+- One by one consider each vertex as an intermediate vertex and update the result of each, 
+if dis[i, j]<dis[i, k]+dis[k, j].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

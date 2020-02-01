@@ -1,0 +1,38 @@
+Serializing and deserializing a tree  =>
+Use preorder traversal (root, left, right) to serialize and deserialize it accordingly.
+
+
+
+- To solve trees problems focus on a particular node how it can contribute to solution and 
+  let recursion rest of the things.
+
+
+- Full Binary Tree => In which every node has two children
+- Complete BT => When level order traversal is done, No empty elements in mid traversals.
+- Perfect BT => No empty elems in level order traversal not even in end.
+
+
+-----------------MERGING TWO BST'S----------------------
+
+- We can merge two bst's by inserting each value from one tree into another in O(n1*log(n2))
+- Other way is  O(n1+n2)
+	- Flattening the tree into sorted array using InOrder O(n1+n2)
+	- Merge two sorted array into one o(n1+n2)
+	- Use recursion to convert a sorted array into BST.  O(n1+n2)
+
+
+
+
+
+
+---------------Convert a BT into BST without disturbing structure------------
+
+- Get the inorder trav of BT into arr and sort this array.
+- Perform Inorder trav on BT and trav on arr simaltaneously and replace the data of each node.
+
+
+
+
+
+
+

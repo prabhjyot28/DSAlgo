@@ -1,0 +1,39 @@
+- Bitwise operators are found to be much faster and are some times used to improve the efficiency of a programme.
+
+- Bitwise operators (&, |, <<, >>, ~, ^).
+
+
+FACTS ==>
+
+- ^  => Dono same honge to 0 otherwise 1.
+
+- Left shift and right shift ops are not used for negative numbers, also it should not be shifted more than the size of integer means 1<<33 gives undefined if ints are stored using 32 bits.
+
+- Left shift and right shift ops are equivalent to multiplication and divide by 2 respectively.
+
+- num<<3  == num*(2**3)
+- num>>4  == num/(2**4)
+
+- NOT ops
+- ~5 = -(5+1) = -6
+- ~-15 = -(-15+1) = 14
+
+
+-Numbers of bits required to represent at max of number n.
+2**n-1>=number
+
+-  We can generally represent an array/2d array by single integer value using bit 
+   manipulation.
+-  Or if numbers are too long we can represent it into an array of bits.
+
+
+
+- log2(n)+1   => represents number of digits in binary reps of number.
+- log(n)+1    => represents number of digits in decimal reps of number.
+
+
+583 in base 10 means => 5*100+8*10+3*1
+101 in base 2 means  => 1*(2**2)+0*(2**1)+1*(2**0)
+
+
+A negative integer is stored in two's component form 

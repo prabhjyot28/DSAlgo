@@ -1,0 +1,23 @@
+LEGB  =>  Local, Enclosing, Global, Built-in.
+In this order python checks a variable scope.
+
+local scope is scope of functions.
+
+enclosing scope refers to scope nested functions where inner function scope is local and outer functions one is enclosing.
+
+gloabal scope refers to scope top most scope outside of any thing.
+
+
+
+
+
+
+
+TWO STATEMENT=======>
+
+
+* global  => to change a variable of global scope from local scope.
+
+
+* nonlocal => to change a variable from enclosing scope from local scope.
+  (Used in case of nested functions)
