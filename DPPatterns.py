@@ -1,7 +1,7 @@
+
+# https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns
+
 # fib ----
-https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns
-
-
 
 ans = [0, 1]
 for i in range(2, n+1):
@@ -33,7 +33,7 @@ for val in arr:
 
 # sort by one parameter and apply binary search dp on another
 
-pairs.sort(key = lambda x: x[0], -x[1])    
+pairs.sort(key = lambda x: x[0], -x[1])
 #so that while applying dp on 2nd para, we should not double count pairs like ([3,3] and [3,4]) incase only one can consider
 
 
@@ -66,9 +66,9 @@ for c in range(1, len(arr)):
 
 # 0/1 Knapsack (Repeation or with out repetition)  --------------------------
 
-dp = [[]]  # 2d table for i&b 0<=i<n and 0<=b<=B.  
+dp = [[]]  # 2d table for i&b 0<=i<n and 0<=b<=B.
 #O(nB) (its not a polynomial runtime in input size), cause to represent B we just required logB space (no of bits)
-# So our running time is exponential to input size (nlogB), and it's not a polynomial time algorithm (IMPORTANT). 
+# So our running time is exponential to input size (nlogB), and it's not a polynomial time algorithm (IMPORTANT).
 #dp[i][b] means max value achievable using a subset of objects [1,..i] and total weights<=b.
 
 #Table is filled row by row.
@@ -96,31 +96,3 @@ dp= [[]]  # 2d dp table in i, j where dp[i][j] representing min. cost of multipl
 
 dp = [[]]  #DP[i][z] represents length of shortest path from from source to z, using <=i edges.
 # 0<=i<=n-1 (edges in the graph),  z<=v (vertices in the graph).
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
