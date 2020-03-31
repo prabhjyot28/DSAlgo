@@ -13,6 +13,13 @@ t1.start()      # to start t1 thread concurrently with our main thread.
 t1.join()       # wait our main thread to complete t1 thread and join it back to main thread.
 
 
+from threading import Event
+e = Event()
+e.wait()    # It will wait our current thread to wait till the event e is not set.
+e.set()     # It will set the event e.
+e.clear()   # It will unset the event e.
+
+
 
 
 
