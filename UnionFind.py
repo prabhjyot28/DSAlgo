@@ -22,7 +22,7 @@ class UnionFind:
         #     next = self.id[node]
         #     self.id[node] = i
         #     node = next
-        
+
         return i
 
     def unite(self, p, q):
@@ -34,3 +34,6 @@ class UnionFind:
         self.id[i] = j
         self.sz[j] += self.sz[i]
         self.count -= 1
+
+
+# Number of components equals to number of unique roots.
