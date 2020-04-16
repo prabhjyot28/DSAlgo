@@ -1,5 +1,16 @@
-#FILE
+# Handling input output from file using sys.
+# It will works same like command line argument.
+import sys
+sys.stdin = open('input.txt', 'r')
+sys.stdout = open('output.txt', 'w')
 
+# And now every input we take is from this input.txt file and every output we make goes to output.txt
+
+
+
+
+# ------------------------------------------------------------------------------FiLe Handling------------------------------------------------#
+#FILE
 # Modes - w, r, r+, a
 # W - write , R - read, r+ - Read and write , a - append
 # Note when we are writing to a file it will remove everything that was previously there, so if you want to write in the end of an existing file use append mode.
