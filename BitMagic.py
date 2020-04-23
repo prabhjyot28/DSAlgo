@@ -51,15 +51,20 @@
 #------------------Brian Kernighan' Algo-------------#
 # subtracting 1 from a number flips all the bits after the rightmost set bit (including it)
 
-# eg.  
+# eg.
 # 10   ==>   1010
 # 9    ==>   1001
 # 8    ==>   1000
 # 7    ==>   0111
 
+# Get the last set bits
+# lastsetbit = n & ~(n-1)
+# lastsetbit = n&-n     (~(n-1) == -(n-1)-1)
+
+
 
 # def countSetBits(num):				#O(log n)
-	
+
 # 	count = 0
 # 	while num:
 # 		count+=1
@@ -79,10 +84,10 @@
 # 	val = 0
 #     for v in arr:
 #         val = val^v
-    
+
 #     for i in range(1, n+1):
 #         val = val^i
-    
+
 #     return val
 
 
@@ -105,6 +110,9 @@
 
 
 
+# ---------------Check if number if power of 2-------------------#
+# If a number if power of 2 then its binary representation there will only be one set bit.
+# so if (x & x-1)==0 that means number is power of 2.
 
 
 
@@ -133,8 +141,3 @@
 # 		return True
 # 	else:
 # 		return False
-
-
-
-
-
