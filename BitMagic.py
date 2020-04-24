@@ -57,9 +57,14 @@
 # 8    ==>   1000
 # 7    ==>   0111
 
-# Get the last set bits
+# Get the last set bits (rightmost)
 # lastsetbit = n & ~(n-1)
 # lastsetbit = n&-n     (~(n-1) == -(n-1)-1)
+
+# Get the first set bit (leftmost) (Most Significant bit)
+# mask = int(log2(n))+1
+# ans = 1<<mask
+
 
 
 
