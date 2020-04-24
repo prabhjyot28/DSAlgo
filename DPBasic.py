@@ -24,7 +24,7 @@
 # 		nos.append(num)
 
 
-	
+
 # 	return nos[n-1]
 
 
@@ -51,6 +51,8 @@
 
 # print(fibonaci(9))
 
+# To check if a number is fibonaci number
+# We can check if 5*n*n + 4 or 5*n*n-4 or both are perfect square numbers.
 
 #------------------Using iteration----------------#
 
@@ -340,7 +342,7 @@
 
 # 	return  a+b
 
-	
+
 
 
 # print(coinChange([1,2,5], 5))
@@ -350,7 +352,7 @@
 
 # Q9 Climbing staircase
 
-# Problem is to find no of ways we can climb up to particular stair and 
+# Problem is to find no of ways we can climb up to particular stair and
 # we are only allowed to make 1 or 2 move.
 
 # cache = {}
@@ -394,7 +396,7 @@
 # def countBST(n):
 # 	global cache
 
-# 	if n<0: 
+# 	if n<0:
 # 		return 0
 
 # 	if n==0:
@@ -436,13 +438,13 @@
 # Applications of Catalan number
 
 # Number of expressions containing n pairs of paranthesis
-# Number of BST with n keys 
+# Number of BST with n keys
 # Number of full binary trees with n+1 leaves
 
 
 
 # Q11 Minimum coins needed to make an amount of change
- 
+
 # cache = {}
 # def minCoins(coins, val):
 # 	global cache
@@ -486,7 +488,7 @@
 # 		ways+=1
 # 		return
 
-	
+
 # 	for i in range(1, len(s)+1):
 # 		c = s[:i]
 
@@ -577,7 +579,7 @@
 # 			cache[(frozenset(w[:-1]), frozenset(v[:-1]), weight)] = zeroOne(w[:-1], v[:-1], weight)
 # 			return cache[(frozenset(w[:-1]), frozenset(v[:-1]), weight)]
 
-	
+
 
 # 	if (frozenset(w[:-1]), frozenset(v[:-1]), weight) in cache:
 # 		timeSaved+=1
@@ -604,143 +606,3 @@
 
 
 # Q16 longest increasing subsequence
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
