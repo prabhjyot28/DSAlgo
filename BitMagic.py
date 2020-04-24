@@ -62,7 +62,7 @@
 # lastsetbit = n&-n     (~(n-1) == -(n-1)-1)
 
 # Get the first set bit (leftmost) (Most Significant bit)
-# mask = int(log2(n))+1
+# mask = int(log2(n))
 # ans = 1<<mask
 
 
