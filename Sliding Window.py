@@ -24,3 +24,11 @@
 # Approach - exactly(k) = atmost(k) - atmost(k-1), Use double sliding window, one for atomst k another for atmost k-1.
 # for evry right index we have two lefts x1 and x2 which represents atmost(k) and atmost(k-1),
 # count += (x2 - x1)  subarrays, at each iterations.
+
+
+
+
+# Monotonic stack
+
+# when we want to get next greater element we keep our stack in increasing order. (or other words first element of stack is minimum.)
+# when we want next smaller element, we want to keep our stack in decreasing order. (first element of stack is maximum).
