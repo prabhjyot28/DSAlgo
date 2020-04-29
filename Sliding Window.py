@@ -7,6 +7,9 @@
 # count += (right - left +1)
 # For every index find it's left most index ans increase count as (right - left +1 ) as there are that many subarrays between this range.
 
+# Numbers of subarrays must inculding i
+# count += ((left - i+1)*(right - i+1))
+
 
 # Count number of pairs in sorted list
 # count += (right - left)
@@ -29,6 +32,44 @@
 
 
 # Monotonic stack
+
+4 Templates
+
+MONOTONOUS INCREASING STACK
+
+1) NLE
+stack = []
+for i in range(len(A)):
+    while stack and A[stack[-1]]>A[i]:
+        NLE[stack.pop()] = i
+    stack.append(i)
+
+2) PLE
+stack = []
+for i in range(len(A)):
+    while stack and A[stack[-1]]>A[i]:
+        stack.pop()
+    PLE[i] = stack[-1] if stack else -1
+    stack.append(i)
+
+
+MONOTONOUS DECREASING STACK
+1) NGE
+stack = []
+for i in range(len(A)):
+    while stack and A[stack[-1]]<A[i]:
+        NGE[stack[-1]] = i
+    stack.append(i)
+
+2) PGE
+stack = []
+for i in range(len(A)):
+    while stack and A[stack[-1]]<A[i]:
+        stack.pop()
+    PGE[i] = stack[-1] if stack else -1
+    stack.append(i)
+
+
 
 # when we want to get next greater element we keep our stack in decreasing order. (or other words first element of stack is maximum.)
 # when we want next smaller element, we want to keep our stack in increasing order. (first element of stack is minimum).
