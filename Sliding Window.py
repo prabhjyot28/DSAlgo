@@ -30,5 +30,5 @@
 
 # Monotonic stack
 
-# when we want to get next greater element we keep our stack in increasing order. (or other words first element of stack is minimum.)
-# when we want next smaller element, we want to keep our stack in decreasing order. (first element of stack is maximum).
+# when we want to get next greater element we keep our stack in decreasing order. (or other words first element of stack is maximum.)
+# when we want next smaller element, we want to keep our stack in increasing order. (first element of stack is minimum).
