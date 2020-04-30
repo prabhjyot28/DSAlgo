@@ -18,5 +18,10 @@ TYPE 2  (In-Out DP)
 
 
 
-TYPE 3  (Binary Lipting)  / (Fenwick Tree / BIT)
+TYPE 3  (Binary Lifting)
 # Lowest Common ancestor of two nodes in (logn)
+# Distance bewteen two nodes.
+# Query problems.
+
+# store the level and parent of each node at level i,i-1,___0, in one pass.
+# https://www.geeksforgeeks.org/lca-for-general-or-n-ary-trees-sparse-matrix-dp-approach-onlogn-ologn/
