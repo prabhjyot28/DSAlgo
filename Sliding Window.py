@@ -70,6 +70,9 @@ for i in range(len(A)):
     stack.append(i)
 
 
-
 # when we want to get next greater element we keep our stack in decreasing order. (or other words first element of stack is maximum.)
 # when we want next smaller element, we want to keep our stack in increasing order. (first element of stack is minimum).
+
+# NOTE 
+# Also stacks are used in problems in which we want to store all elements greater than or less than a key, where key is Monotonic in nature
+# while traversing the whole array.  (leetcode 456 (132 pattern))
