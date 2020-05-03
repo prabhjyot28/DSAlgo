@@ -1,5 +1,7 @@
 
 # https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns
+# DP WITH BITMASKING 
+# https://leetcode.com/problems/maximum-students-taking-exam/discuss/503686/a-simple-tutorial-on-this-bitmasking-problem
 
 # fib ----
 
