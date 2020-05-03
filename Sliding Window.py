@@ -73,6 +73,65 @@ for i in range(len(A)):
 # when we want to get next greater element we keep our stack in decreasing order. (or other words first element of stack is maximum.)
 # when we want next smaller element, we want to keep our stack in increasing order. (first element of stack is minimum).
 
-# NOTE 
+
+# Problems involving finding of farthest larger element in the right.
+# Also, farthest smaller element in left.
+# both of above problems are same as (FLER  == FSEL).
+
+FARTHEST GREATER ON RIGHT
+
+stack = []   # keep a increasing stack.
+for i in range(len(A)-1, -1, -1):
+    if not stack or A[stack[-1]]<A[i]:
+        stack.append(i)
+
+ans = 0
+for i in range(len(A)):
+    while stack and A[stack[-1]]>=A[i]:
+        ans = max(ans, stack.pop()-i)
+
+
+
+FARTHEST SMALLER ON LEFT
+
+stack = []   # keep a decreasing stack.
+for i in range(len(A)):
+    if not stack or A[stack[-1]]>A[i]:
+        stack.append(i)
+
+ans = 0
+for j in range(len(A)-1,-1,-1):
+    while stack and A[stack[-1]]<=A[j]:
+        ans = max(ans, j-stack.pop())
+
+
+
+FARTHEST SMALLER ON RIGHT
+
+stack = []  # keep in decreasing order.
+for i in range(len(A)-1, -1, -1):
+    if not stack or A[stack[-1]]>A[i]:
+        stack.append(i)
+
+ans = 0
+for i in range(len(A)):
+    while stack and A[stack[-1]]<=A[i]:
+        ans = max(ans, stack.pop()-i)
+
+
+FARTHEST GREATER ON LEFT
+
+stack = []   # keep in increasing order.
+for i in range(len(A)):
+    if not stack or A[stack[-1]]<A[i]:
+        stack.append(i)
+
+for j in range(len(A)-1, -1, -1):
+    while stack and A[stack[-1]]>=A[j]:
+        ans  = max(ans, j - stack.pop())
+
+
+
+# NOTE
 # Also stacks are used in problems in which we want to store all elements greater than or less than a key, where key is Monotonic in nature
 # while traversing the whole array.  (leetcode 456 (132 pattern))
