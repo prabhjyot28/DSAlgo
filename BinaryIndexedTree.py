@@ -82,6 +82,10 @@ class SegmentTree:
         return minimum
 
 
+# OTHER USEFUL RESOURCES
+# https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/
+
+
 # Leetcode 220.
 #If it reminds us of doing a range check which is implemented in tree data structure
 # and would take O(LogN) if a balanced tree structure is used, or doing a bucket
