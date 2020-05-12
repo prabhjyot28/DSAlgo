@@ -42,3 +42,41 @@ d. Sort
 
 
 # THE BFS Approch can be used to find any cycle in a directed graph as if length of TOPOLOGICAL sort!= Number of vertices.
+
+
+#Eg- Get All possible top sort of a DAG.
+pre = [[2, 5], [0, 5], [0, 4], [1, 4], [3, 2], [1, 3]]
+tasks = 6
+
+g = collections.defaultdict(list)
+indegree = collections.defaultdict(int)   # Indegree 0, means source.
+
+for p in pre:
+    g[p[0]].append(p[1])
+    indegree[p[1]]+=1
+
+
+ans = []
+def AllTop(sources, curr):
+    if len(curr)==tasks:
+        ans.append(curr.copy())
+        return
+
+    for v in sources:
+        nsources = sources.copy()
+        nsources.remove(v)
+        for c in g[v]:
+            indegree[c]-=1
+            if indegree[c]==0:
+                nsources.append(c)
+        AllTop(nsources, curr+[v])
+        for c in g[v]:
+            indegree[c]+=1
+    return
+
+sources = []
+for i in range(tasks):
+    if indegree[i]==0:
+        sources.append(i)
+
+AllTop(sources, [])
