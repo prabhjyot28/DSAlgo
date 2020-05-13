@@ -349,32 +349,28 @@ from queue import PriorityQueue
 
 #--------------------------Floyd Warshall Algorithm-------------------------#
 # TO find the shortest path between all pair of vertices.
+# Dynamic Programming.
+
 
 
 # def FloydWarshall(mat, n):
 
 # 	for row in mat:
 # 		print(*row)
+#   next  -  matrix used to reconstruct shortes path.   (where do we want to go from node i (to j default))
 
-# 	for Mid in range(n):
+# 	for mid in range(n):
 # 		for i in range(n):
 # 			for j in range(n):
-# 				if mat[i][Mid]!=None and mat[Mid][j]!=None:
-# 					cost = mat[i][Mid]+mat[Mid][j]
-# 					if mat[i][j]!=None:
-# 						if cost<mat[i][j]:
-# 							mat[i][j] = cost
-# 					else:
-# 						mat[i][j] = cost
+# 				if dp[i][mid]+dp[mid][j] < dp[i][j]:
+#					dp[i][j] = dp[i][mid]+dp[mid][j]
+#                   next[i][j] = next[i][mid]
+#
+# 	Detectandpropogatenegativecycles()
+# 	return mat
 
-# 	print()
-# 	print()
-# 	for row in mat:
-# 		print(*row)
 
-# 	return
-
-# FloydWarshall([[0,3,None,7], [8,0,2,None], [5,None,0,1], [2,None,None,0]], 4)
+# FloydWarshall([[0,3,float('inf'),7], [8,0,2,float('inf')], [5,float('inf'),0,1], [2,float('inf'),float('inf'),0]], 4)
 
 
 
