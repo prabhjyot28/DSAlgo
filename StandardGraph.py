@@ -21,7 +21,7 @@ from collections import deque
 # 			if g[node][i] not in tarvesed:
 # 				d.appendleft(g[node][i])
 
-		
+
 #------------------Recursive DFS----------------#
 
 # tarversed  = set()
@@ -113,7 +113,7 @@ from collections import deque
 
 from queue import PriorityQueue
 
-# def Dijkstra(edges, start, n):
+# def Dijkstra(edges, start, n):     # O(ElogV)
 
 # 	pq = PriorityQueue()
 # 	trav = [False]*n
@@ -128,7 +128,7 @@ from queue import PriorityQueue
 # 		cost = elem[0]
 # 		ver = elem[1]
 # 		trav[ver-1] = True
-	
+
 # 		for edge in edges:
 # 			if edge[0]==ver and not trav[edge[1]-1]:     # Consider all neighbours of ver
 # 				ncost = cost+edge[2]
@@ -257,7 +257,7 @@ from queue import PriorityQueue
 
 # 	edgesUsed = set()
 # 	cost = 0
-	
+
 # 	nodes = set()
 
 
@@ -322,39 +322,21 @@ from queue import PriorityQueue
 
 
 
-# def BellmanFord(edges, n):
-# 	dis = [None]*n
-# 	dis[0] = 0
 
-# 	update = True
-
-# 	while update:
-
-# 		update = False
-
-# 		for i in range(1, n+1):
-# 			for edge in edges:
-# 				if dis[i-1]!=None and i in (edge[0], edge[1]):
-# 					if i==edge[0]:
-# 						if dis[edge[1]-1]==None:
-# 							dis[edge[1]-1] = dis[i-1]+edge[2]
-# 							update = True
-
-# 						elif dis[i-1]+edge[2]<dis[edge[1]-1]:
-# 							dis[edge[1]-1] = dis[i-1]+edge[2]
-# 							update = True
-
-# 					if i==edge[1]:
-# 						if dis[edge[0]-1]==None:
-# 							dis[edge[0]-1] = dis[i-1]+edge[2]
-# 							update = True
-
-# 						elif dis[i-1]+edge[2]<dis[edge[0]-1]:
-# 							dis[edge[0]-1] = dis[i-1]+edge[2]
-# 							update = True
-
-# 	print(dis)
-# 	return
+# def BellmanFord(edges, n):    O(EV)
+#
+#     dis = [float('inf')]*(n+1)
+#     dis[1] = 0
+#     for i in range(n-1):   # at most v-1 times.
+#         update = False
+#         for edge in edges:          # Iterate through every edge and relax the distance if possible.
+#             if dis[edge[0]]+edge[2] < dis[edge[1]]:
+#                 dis[edge[1]] = dis[edge[0]]+edge[2]
+#                 update = True
+#         if not update:
+#             return dis
+#
+#     return dis
 
 
 # BellmanFord([(1,2,24), (1,3,3), (1,4,20), (3,4,12)], 4)  # from v1 [0, 24, 3, 15]
@@ -406,24 +388,3 @@ from queue import PriorityQueue
 # bridge is where  ===>   id(e.from) < low-link-value(e.to)
 
 #low-link value of a node is defined as the smallest id reachable from the node (including itself). #(O(V.(V+E)))
-
-
-
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
