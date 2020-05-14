@@ -1,3 +1,9 @@
+#Why comparison based sorting algorithms are nlogn?
+# Beacause we make a series of comparisons in a sorting based algorithm and minuimum height of decision tree so that we can conclude the result is O(nlogn)
+# This comes from Min Leave nodes when decision tree is optimal is n! and max leave nodes in a tree of height h is 2^h .
+# So 2^h >= n!   which leads us to h>=nlogn.
+ 
+
 
 # Selection sort
 # Find the minimum element and put it in the begining.
