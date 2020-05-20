@@ -28,8 +28,8 @@ class UnionFind:
     def root(self, i):
         node = i
         while i != self.id[i]:
-            self.id[i] = self.id[self.id[i]]
             i = self.id[i]
+            
 
         # Path Compression.
         # while node!=i:
