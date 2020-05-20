@@ -1,3 +1,17 @@
+# Two core opeartions -
+# 1) Find => Tells which group an item belongs.
+# 2) Union => Unites two group.
+
+# Used in Kruskal's MST, Network connectivity and many more.
+# Time Complexity.
+# Construction - O(n)
+# Union - a(n)
+# Find - a(n)
+# Get components size - a(n)
+# Check if connected - a(n)
+# Count components - O(1)
+# a(n) - amortized constant time. (Almost constant time)
+
 
 class UnionFind:
     def __init__(self):
