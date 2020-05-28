@@ -58,7 +58,7 @@ MONOTONOUS DECREASING STACK
 stack = []
 for i in range(len(A)):
     while stack and A[stack[-1]]<A[i]:
-        NGE[stack[-1]] = i
+        NGE[stack.pop()] = i
     stack.append(i)
 
 2) PGE
