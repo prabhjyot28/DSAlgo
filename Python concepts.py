@@ -9,7 +9,7 @@ def ArrayHashing(arr):
                 else:
                         d[arr[i]] = [i]
 
-                
+
 #Sometimes we need to change the original array, but its expensive
 #instead we can create a new arr and than assign it to orig one
 
@@ -49,13 +49,14 @@ def binarySearch(arr, N):
             start = mid+1
         else:
             end = mid-1
-        
+
     return -1
 
 
 from functools import cmp_to_key
 def func(a, b):
-	return a>b
+	return a-b
+    
 
 arr.sort(key = cmp_to_key(func))    #to sort usimg comaprator
 
@@ -122,7 +123,7 @@ permutations(l, 2)			# gives all the different permutations of 2 values from l
 # permutations and combinations does not repeat value, means it does not give combinations like ('a', 'a') because there
 # is only ine a in our l.
 
-# product when we allowed to repeat the number 
+# product when we allowed to repeat the number
 product(l, repeat = 4)    # give us all the different ways that we could arrange the values when repeatitions is allowed 4 times.
 						   # ('a', 'a', 'a', 'b')  and ('a', 'a', 'b', 'a')   are considered different.
 
@@ -141,4 +142,3 @@ accumulate(l)  #[1,3,6,10]
 # we can operator.mul as second argument to get a the running multiplication.
 import operator
 accumulate(l, operator.mul)   #[1,2,6,24]
-
