@@ -2,13 +2,14 @@
 # Beacause we make a series of comparisons in a sorting based algorithm and minuimum height of decision tree so that we can conclude the result is O(nlogn)
 # This comes from Min Leave nodes when decision tree is optimal is n! and max leave nodes in a tree of height h is 2^h .
 # So 2^h >= n!   which leads us to h>=nlogn.
- 
+
 
 
 # Selection sort
 # Find the minimum element and put it in the begining.
 # Time Complexity O(n^2), Space Complexity O(1), Unstable (Can occur at Swapping step)
 # Can be make stable, if instead of swapping we push all the array forward.
+# Best case O(n^2)
 
 
 
@@ -20,7 +21,7 @@
 # Insertion sort
 # The way we sort cards in our hands, ie by putting every new element in its correct position.
 # Time Complexity o(n^2), Space O(1), STABLE.
-
+# Best case O(n)
 
 
 #-----------------------------------------------------------------------------------------------------------------#
@@ -33,6 +34,7 @@
 # Repeatedly Swap adjacent elements if they are in wrong order, in every pass maximum value will ocurr at the last.
 # Hence the name bubble sort, because maximum values are bubbling at the end.
 # Time Complexity O(n^2), Space O(1), STABLE.
+# Best case O(n) 
 
 
 
