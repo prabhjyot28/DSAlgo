@@ -22,7 +22,7 @@ FACTS ==>
 -Numbers of bits required to represent at max of number n.
 2**n-1>=number
 
--  We can generally represent an array/2d array by single integer value using bit 
+-  We can generally represent an array/2d array by single integer value using bit
    manipulation.
 -  Or if numbers are too long we can represent it into an array of bits.
 
@@ -36,4 +36,37 @@ FACTS ==>
 101 in base 2 means  => 1*(2**2)+0*(2**1)+1*(2**0)
 
 
-A negative integer is stored in two's component form 
+A negative integer is stored in two's component form
+
+
+
+
+def sum(a, b):
+    if b==0:
+        return a
+
+    car = a&b
+    s = a^b
+    return sum(s, car<<1)
+
+
+def subtract(a, b):
+    if b==0:
+        return a
+
+    car = ~a&b
+    ans = a^b
+    return subtract(ans, car<<1)
+
+
+def Multiply(a, b):
+    bit = 0
+    ans = 0
+    while b:
+        if b&1:
+            ans += a<<bit
+
+        bit  = bit+1
+        b = b>>1
+
+    return ans
