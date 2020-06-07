@@ -34,7 +34,7 @@
 # Repeatedly Swap adjacent elements if they are in wrong order, in every pass maximum value will ocurr at the last.
 # Hence the name bubble sort, because maximum values are bubbling at the end.
 # Time Complexity O(n^2), Space O(1), STABLE.
-# Best case O(n) 
+# Best case O(n)
 
 
 
@@ -85,6 +85,51 @@ def partition(arr):
 
 
 #-----------------------------------------------------------------------------------------------------------------#
+
+# Simple version of partition algo.
+def partition(l, r):
+    pivot = arr[r]
+    i = l
+    for j in range(l, r):       # Move all elems smaller/equal to pivot in front of arr.
+        if arr[j]<=pivot:
+            arr[i], arr[j] = arr[j], arr[i]
+            i+=1
+    arr[i], arr[r] = arr[r], arr[i]      # Now i is the correct place for pivot.
+    return i
+    
+
+
+def QucikSelect(arr, k):    # Find the kth smallest element in arr in O(n)
+    # if index of partitioned element is more than k, then we recur for left part.
+    # If index is same as k, we have found the k-th smallest element and we return.
+    # If index is less than k, then we recur for right part.
+    # This reduces the expected complexity from O(n log n) to O(n), with a worst case of O(n^2).
+
+
+    # if k is smaller than number of
+    # elements in array
+    if (k > 0 and k <= r - l + 1):
+
+        # Partition the array around last
+        # element and get position of pivot
+        # element in sorted array
+        index = partition(arr, l, r)
+
+        # if position is same as k
+        if (index - l == k - 1):
+            return arr[index]
+
+        # If position is more, recur
+        # for left subarray
+        if (index - l > k - 1):
+            return kthSmallest(arr, l, index - 1, k)
+
+        # Else recur for right subarray
+        return kthSmallest(arr, index + 1, r, k - index + l - 1)
+
+    return -1
+
+
 
 
 
