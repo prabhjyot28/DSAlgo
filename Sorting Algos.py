@@ -87,7 +87,7 @@ def partition(arr):
 #-----------------------------------------------------------------------------------------------------------------#
 
 # Simple version of partition algo.
-def partition(l, r):
+def partition(arr, l, r):
     pivot = arr[r]
     i = l
     for j in range(l, r):       # Move all elems smaller/equal to pivot in front of arr.
@@ -96,10 +96,10 @@ def partition(l, r):
             i+=1
     arr[i], arr[r] = arr[r], arr[i]      # Now i is the correct place for pivot.
     return i
-    
 
 
-def QucikSelect(arr, k):    # Find the kth smallest element in arr in O(n)
+
+def QucikSelect(arr,l, r, k):    # Find the kth smallest element in arr in O(n)
     # if index of partitioned element is more than k, then we recur for left part.
     # If index is same as k, we have found the k-th smallest element and we return.
     # If index is less than k, then we recur for right part.
@@ -122,10 +122,10 @@ def QucikSelect(arr, k):    # Find the kth smallest element in arr in O(n)
         # If position is more, recur
         # for left subarray
         if (index - l > k - 1):
-            return kthSmallest(arr, l, index - 1, k)
+            return QucikSelect(arr, l, index - 1, k)
 
         # Else recur for right subarray
-        return kthSmallest(arr, index + 1, r, k - index + l - 1)
+        return QucikSelect(arr, index + 1, r, k - index + l - 1)
 
     return -1
 
