@@ -64,7 +64,7 @@ while not q.empty():
 
 # smallest = h[0]   # to acess smallest item without popping
 
-# heapq.heappushpop(h, 15)   # first push then pop  
+# heapq.heappushpop(h, 15)   # first push then pop
 # heapq.heapreplace(h, 20)   # first pop then push
 
 
@@ -93,3 +93,22 @@ while not q.empty():
 #heapq._heapify_max(arr)
 #heapq._heappush_max(arr, val)
 
+
+
+
+#====================General Purpose functions===================
+heapq.merge(*iterables, key=None, reverse = False)      # O(sum(size of iterable))
+heapq.nlargest(n, iterable, key=None)        # Decreasing order.
+heapq.nsmallest(n, iterable, key=None)       # Increasing Order.
+
+
+a = [1,6,9,12,13,15,19]
+b = [4,6,7,9,10,13]
+c = [19,19,23]
+
+arr = list(heapq.merge(a, b, c))  # O(a+b+c)
+
+u = [19,1,10,2,3,9,4]
+print(heapq.nlargest(4, u))    # Nlogn
+
+# We can find n smallest/largest element from a unsorted list in O(N) using Quick Select but they will be in random order.
