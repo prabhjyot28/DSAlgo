@@ -40,11 +40,11 @@ CONS
 
 
 PROS
--  Always returns shortest length path (one with fewest edges) for unweighted graphs. 
+-  Always returns shortest length path (one with fewest edges) for unweighted graphs.
    NOTE:- In weighted graph, not always optimal cost path.
 
 CONS
-- It generally visits more nodes/ locations then DFS before finding a path. So It depends 
+- It generally visits more nodes/ locations then DFS before finding a path. So It depends
   on our data when it's expensive to look up and visit our data, go with DFS.
 
 
@@ -69,7 +69,7 @@ A modified version of Dijkstra's Algorithm that uses a heuristic function to gui
 A* supposed to sort of going a good way versus going a bad way
 Exactly the same algorithm as Dijkstra but uses a priority queue as
 
-P(b) = cost(a, b) + heuristic(b, c) 
+P(b) = cost(a, b) + heuristic(b, c)
 
 
 NOTE ==>
@@ -160,7 +160,7 @@ NOTE::  But No algorithm can find a minimum cost path if there is a negative cyc
 
 Floyd Warshall Algorithm => Provides minimum cost path between all pair of vertices instead of a source vertex. O(n**3)
 
-NOTE:: Can be soleved in O(n**3) by applying dijkstra/bellman on all vertices one by one.
+NOTE:: Can be solved in O(n**3) by applying dijkstra/bellman on all vertices one by one.
 
 
 
@@ -169,38 +169,91 @@ NOTE:: Can be soleved in O(n**3) by applying dijkstra/bellman on all vertices on
 Pseudo Code =>
 
 - Generate dis matrix by considering directed edges only.
-- One by one consider each vertex as an intermediate vertex and update the result of each, 
+- One by one consider each vertex as an intermediate vertex and update the result of each,
 if dis[i, j]<dis[i, k]+dis[k, j].
 
 
 
 
+#-------------------------------Templates-----------------------------------#
 
 
 
 
+def DFS(node):
+    trav = set()
+    def helper(curr):
+        if curr in trav:
+            return
+        trav.add(curr)
+        for nei in curr.neighbors:
+            helper(nei)
+
+
+def BFS(node):
+    trav = set()
+    d = collections.deque()
+    d.append(node)
+    trav.add(node)
+
+    while d:
+        curr = d.popleft()
+        for nei in curr.neighbors:
+            if nei not in trav:
+                d.append(nei)
+                trav.add(nei)
 
 
 
+def Dijkstra(source):
+    from queue import PriorityQueue
+    pq = PriorityQueue()
+    cost = [math.inf]*n
+    cost[source] = 0
+
+    for n in nodes:
+        pq.put((cost[n], n))
+
+    while not pq.empty():
+        curr_cost, curr_node = pq.get()
+        visited.add(curr_node)
+
+        for nei, c in curr_node.neighbors:
+            if c+curr_cost<cost[nei]:
+                cost[nei] = c+curr_cost
+                pq.put((cost[nei], nei))
+
+    return cost
 
 
 
+def BellmanFord(source):
+    cost = [float('inf')]*(n+1)
+    cost[source] = 0
+    for i in range(n-1):   # at most v-1 times.
+        update = False
+        for edge in edges:          # Iterate through every edge and relax the distance if possible.
+            if cost[edge[0]]+edge[2] < cost[edge[1]]:
+                cost[edge[1]] = cost[edge[0]]+edge[2]
+                update = True
+        if not update:
+            return cost
+
+    return cost
 
 
+def FloydWarshall():
+    # APSP
+    cost = [[float('inf')]*n for i in range(n)]
+    for i in range(n):
+        cost[i][i] = 0
 
+    for u, v, c in edges:
+        cost[u][v] = c
 
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                cost[i][j] = min(cost[i][j], cost[i][k]+cost[k][j])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return cost
