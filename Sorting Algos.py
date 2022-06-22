@@ -2,7 +2,7 @@
 # Beacause we make a series of comparisons in a sorting based algorithm and minuimum height of decision tree so that we can conclude the result is O(nlogn)
 # This comes from Min Leave nodes when decision tree is optimal is n! and max leave nodes in a tree of height h is 2^h .
 # So 2^h >= n!   which leads us to h>=nlogn.
-
+# https://www.youtube.com/watch?v=WffUZk1pgXE
 
 
 # Selection sort
@@ -10,7 +10,19 @@
 # Time Complexity O(n^2), Space Complexity O(1), Unstable (Can occur at Swapping step)
 # Can be make stable, if instead of swapping we push all the array forward.
 # Best case O(n^2)
-
+def selectionSort(A):
+    for i in range(len(A)):
+     
+        # Find the minimum element in remaining
+        # unsorted array
+        min_idx = i
+        for j in range(i+1, len(A)):
+            if A[min_idx] > A[j]:
+                min_idx = j
+                 
+        # Swap the found minimum element with
+        # the first element       
+        A[i], A[min_idx] = A[min_idx], A[i]
 
 
 #-----------------------------------------------------------------------------------------------------------------#
@@ -22,6 +34,21 @@
 # The way we sort cards in our hands, ie by putting every new element in its correct position.
 # Time Complexity o(n^2), Space O(1), STABLE.
 # Best case O(n)
+def insertionSort(arr):
+ 
+    # Traverse through 1 to len(arr)
+    for i in range(1, len(arr)):
+ 
+        key = arr[i]
+ 
+        # Move elements of arr[0..i-1], that are
+        # greater than key, to one position ahead
+        # of their current position
+        j = i-1
+        while j >= 0 and key < arr[j] :
+                arr[j + 1] = arr[j]
+                j -= 1
+        arr[j + 1] = key
 
 
 #-----------------------------------------------------------------------------------------------------------------#
@@ -36,6 +63,27 @@
 # Time Complexity O(n^2), Space O(1), STABLE.
 # Best case O(n)
 
+def bubbleSort(arr):
+    # Traverse through all array elements
+    for i in range(n):
+        swapped = False
+ 
+        # Last i elements are already
+        #  in place
+        for j in range(0, n-i-1):
+  
+            # traverse the array from 0 to
+            # n-i-1. Swap if the element
+            # found is greater than the
+            # next element
+            if arr[j] > arr[j+1] :
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+ 
+        # IF no two elements were swapped
+        # by inner loop, then break
+        if swapped == False:
+            break
 
 
 #-----------------------------------------------------------------------------------------------------------------#
@@ -141,7 +189,7 @@ def QucikSelect(arr,l, r, k):    # Find the kth smallest element in arr in O(n)
 # Important for sorting linked lists, because no extra space required for merging two sorted linked lists.
 # Used in external sorting. (Merging two very large sorted lists, (merging in chunks).)
 
-
+# Iterative Merge Sort
 
 #-----------------------------------------------------------------------------------------------------------------#
 
